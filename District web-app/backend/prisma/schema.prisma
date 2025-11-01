@@ -1,0 +1,28 @@
+// Prisma schema file
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model District {
+  id                                                Int    @id @default(autoincrement())
+  state_name                                        String
+  district_name                                     String
+  fin_year                                          String
+  month                                             String
+  Total_Households_Worked                           Int
+  Total_Individuals_Worked                          Int
+  Women_Persondays                                  Int
+  Average_Wage_rate_per_day_per_person              Int
+  Average_days_of_employment_provided_per_Household Float
+  Total_No_of_Active_Job_Cards                      Int
+  Total_No_of_Active_Workers                        Int
+  Completed_Works                                   Int
+  Ongoing_Works                                     Int
+  Payment_within_15_days                            Int
+}
